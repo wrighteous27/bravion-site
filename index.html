@@ -1,0 +1,574 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Bravion Doors &amp; Windows</title>
+<meta name="color-scheme" content="light">
+<meta name="description" content="Bravion makes custom doors and windows to order for homeowners, remodelers and builders across Dallas–Fort Worth.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: a calm, photo-led trade site. Sticky top bar, one page per hash route, wide image bands alternating with narrow text columns. */
+:root{
+  /* Base tokens (Original Bravion, light). themes.js redefines these for the chosen theme. The site is light-only on purpose. */
+  --bg:#F4F6F9; --surface:#FFFFFF; --sunk:#E6EBF1; --fg:#0E1B2C; --muted:#566273; --line:#D2D9E2;
+  --pri:#062C5C; --pri-2:#0B3E7C; --acc:#7C7D7F; --acc-soft:#DCE5EF; --on-pri:#F2F5F9; --hl:#3E6FA3;
+  --f-ui:"Montserrat",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --f-head:"Montserrat",system-ui,sans-serif;
+  --f-serif:"Cormorant Garamond",Georgia,serif;
+  --f-word:var(--f-ui);
+  --f-mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+  --hw:600; --hc:none; --hls:-.01em; --wc:uppercase; --wls:.28em; --ww:600;
+  --r:2px; --max:1180px;
+}
+
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--f-ui);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--acc);outline-offset:2px}
+.in{max-width:var(--max);margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+h1,h2,h3{font-weight:500;line-height:1.15;text-wrap:balance;margin:0}
+h1,h2{font-family:var(--f-head);font-weight:var(--hw);text-transform:var(--hc);letter-spacing:var(--hls)}
+h1{font-size:clamp(34px,5vw,58px)}
+h2{font-size:clamp(26px,3.2vw,38px)}
+h3{font-size:20px;font-weight:600}
+em.s{font-family:var(--f-serif);font-style:italic;font-weight:500;color:var(--hl);text-transform:none}
+p{margin:0}
+.eyebrow{font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;font-weight:600;color:var(--hl)}
+.muted{color:var(--muted)}
+.spec{font-family:var(--f-mono);font-size:12.5px;color:var(--muted);letter-spacing:.02em}
+
+/* draft banner */
+.draft{background:var(--acc-soft);color:var(--fg);font-size:13.5px}
+.draft .in{padding-block:7px;display:flex;gap:10px;flex-wrap:wrap;justify-content:space-between}
+
+/* top bar */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.top .in{display:flex;align-items:center;gap:18px;padding-block:12px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+.logo-mark{display:inline-flex;width:36px;height:40px;flex:none}.logo-mark svg,.logo-mark img{width:100%;height:100%;object-fit:contain}
+.logo.has-img .logo-mark{width:auto;max-width:180px}.logo.has-img .logo-text{display:none}
+.draft select{font:inherit;font-size:13px;padding:2px 6px;border:1px solid var(--line);border-radius:3px;background:var(--surface);color:var(--fg)}
+.logo b{font-family:var(--f-word);font-weight:var(--ww);letter-spacing:var(--wls);text-transform:var(--wc);font-size:19px;color:var(--pri)}
+.logo small{display:block;font-size:9.5px;letter-spacing:.26em;text-transform:uppercase;color:var(--muted);margin-top:-2px}
+nav.main{display:flex;gap:4px;margin-left:auto;flex-wrap:wrap}
+nav.main a{text-decoration:none;padding:7px 11px;border-radius:var(--r);font-size:15.5px;color:var(--muted)}
+nav.main a:hover{color:var(--fg);background:var(--sunk)}
+nav.main a[aria-current="page"]{color:var(--fg);font-weight:500}
+.menu-btn{display:none;margin-left:auto;background:none;border:1px solid var(--line);border-radius:var(--r);padding:7px 12px;font:inherit;color:var(--fg)}
+@media (max-width:900px){
+  .menu-btn{display:inline-block}
+  nav.main{display:none;position:absolute;left:0;right:0;top:100%;background:var(--surface);border-bottom:1px solid var(--line);flex-direction:column;padding:8px max(16px,env(safe-area-inset-right,0px)) 14px max(16px,env(safe-area-inset-left,0px))}
+  nav.main.open{display:flex}
+  .top .btn{display:none}
+}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;gap:8px;text-decoration:none;font:inherit;font-weight:500;font-size:16px;padding:11px 18px;border-radius:var(--r);border:1px solid transparent;cursor:pointer;white-space:nowrap}
+.btn.pri{background:var(--pri);color:var(--on-pri)}
+.btn.pri:hover{background:var(--pri-2)}
+.btn.sec{border-color:var(--fg);color:var(--fg);background:transparent}
+.btn.sec:hover{background:var(--sunk)}
+.btn.ghost{color:var(--pri);padding-inline:4px}
+.btn[disabled],.btn.off{opacity:.5;cursor:not-allowed}
+.btns{display:flex;gap:10px;flex-wrap:wrap}
+
+/* pages */
+[data-page]{display:none}
+[data-page].on{display:block}
+.band{padding-block:64px}
+.band.tint{background:var(--sunk)}
+.band.feature{background:var(--acc-soft)}
+.head{display:flex;flex-direction:column;gap:12px;max-width:62ch;margin-bottom:32px}
+
+/* hero */
+.hero{padding-block:48px 56px;position:relative;overflow:hidden}
+.hero .in{position:relative;z-index:1}
+.hero-deco{display:none}
+.hero .in{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:44px;align-items:center}
+.hero .copy{display:flex;flex-direction:column;gap:20px}
+.hero .copy p.lead{font-size:19px;color:var(--muted);max-width:46ch}
+@media (max-width:860px){.hero .in{grid-template-columns:1fr}}
+.page-hero{padding-block:44px 8px}
+.page-hero .in{display:flex;flex-direction:column;gap:14px;max-width:calc(var(--max))}
+.page-hero p.lead{font-size:19px;color:var(--muted);max-width:60ch}
+
+/* photo slot */
+.ph{position:relative;margin:0;border-radius:var(--r);overflow:hidden;background:var(--sunk);aspect-ratio:4/3;max-width:100%}
+.ph.wide{aspect-ratio:16/9}
+.ph.tall{aspect-ratio:4/5}
+.ph img,.ph svg{width:100%;height:100%;display:block;object-fit:cover}
+.ph figcaption{position:absolute;left:10px;bottom:10px;font-family:var(--f-mono);font-size:11px;background:color-mix(in srgb,var(--surface) 88%,transparent);color:var(--muted);padding:3px 8px;border-radius:3px}
+.ph figcaption a{color:var(--pri)}
+
+/* grids */
+.g2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+.g3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.g4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px}
+@media (max-width:980px){.g4{grid-template-columns:repeat(2,minmax(0,1fr))}.g3{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:640px){.g2,.g3,.g4{grid-template-columns:1fr}}
+
+/* audience paths */
+.path{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:26px;display:flex;flex-direction:column;gap:12px;min-width:0}
+.path ul{margin:0;padding-left:18px;color:var(--muted)}
+.path .btns{margin-top:auto;padding-top:6px}
+
+/* product tiles */
+.tile{display:flex;flex-direction:column;gap:12px;text-decoration:none;min-width:0}
+.tile h3{display:flex;justify-content:space-between;gap:8px}
+.tile:hover h3 span{transform:translateX(3px)}
+.tile h3 span{transition:transform .2s;color:var(--acc)}
+
+/* steps */
+.steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px;counter-reset:s}
+.steps li{border-top:2px solid var(--acc);padding-top:14px;display:flex;flex-direction:column;gap:6px;counter-increment:s}
+.steps li::before{content:"Step " counter(s);font-family:var(--f-mono);font-size:12px;color:var(--acc)}
+@media (max-width:860px){.steps{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:520px){.steps{grid-template-columns:1fr}}
+
+/* split */
+.split{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:44px;align-items:center}
+.split.rev > :first-child{order:2}
+@media (max-width:860px){.split{grid-template-columns:1fr}.split.rev > :first-child{order:0}}
+.stack{display:flex;flex-direction:column;gap:16px}
+.checks{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px}
+.checks li{padding-left:26px;position:relative}
+.checks li::before{content:"";position:absolute;left:0;top:.5em;width:12px;height:12px;border:2px solid var(--acc);border-radius:2px}
+
+/* product detail rows */
+.prod{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:36px;padding-block:36px;border-top:1px solid var(--line);align-items:start}
+.prod:first-of-type{border-top:0}
+@media (max-width:820px){.prod{grid-template-columns:1fr}}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{font-size:14px;border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:4px 12px}
+dl.specs{display:grid;grid-template-columns:max-content 1fr;gap:6px 18px;margin:0}
+dl.specs dt{font-family:var(--f-mono);font-size:12.5px;color:var(--muted);padding-top:3px}
+dl.specs dd{margin:0}
+
+/* cards for teams / vignettes */
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:22px;display:flex;flex-direction:column;gap:10px;min-width:0}
+.vig{display:flex;flex-direction:column;gap:10px;min-width:0}
+
+/* forms */
+form{display:flex;flex-direction:column;gap:16px}
+.field{display:flex;flex-direction:column;gap:6px;min-width:0}
+.field label,.legend{font-weight:500;font-size:15px}
+.field .hint{font-size:13.5px;color:var(--muted)}
+input[type=text],input[type=email],input[type=tel],input[type=password],select,textarea{font:inherit;font-size:16px;color:var(--fg);background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:10px 12px;width:100%}
+input:focus,select:focus,textarea:focus{border-color:var(--pri);outline:none;box-shadow:0 0 0 3px color-mix(in srgb,var(--pri) 22%,transparent)}
+input:disabled{opacity:.6}
+textarea{min-height:110px;resize:vertical}
+.row2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+@media (max-width:560px){.row2{grid-template-columns:1fr}}
+.opts{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:8px}
+.opt{display:flex;gap:10px;align-items:flex-start;border:1px solid var(--line);background:var(--surface);border-radius:var(--r);padding:10px 12px;cursor:pointer;font-size:15.5px}
+.opt:has(input:checked){border-color:var(--pri);box-shadow:inset 0 0 0 1px var(--pri)}
+.opt input{margin-top:5px;accent-color:var(--pri)}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:28px;min-width:0}
+.notice{border-left:3px solid var(--acc);background:var(--acc-soft);padding:12px 14px;font-size:15px;border-radius:0 var(--r) var(--r) 0}
+.err{color:#B3261E;font-size:14px}
+
+/* quote stepper */
+.progress{display:flex;gap:6px;list-style:none;margin:0 0 22px;padding:0;flex-wrap:wrap}
+.progress li{flex:1 1 90px;font-size:13px;color:var(--muted);border-top:3px solid var(--line);padding-top:6px}
+.progress li.done,.progress li.now{border-color:var(--pri);color:var(--fg)}
+.progress li.now{font-weight:600}
+.qstep{display:none;flex-direction:column;gap:18px}
+.qstep.on{display:flex}
+.navrow{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;margin-top:6px}
+.files{font-size:14px;color:var(--muted);margin:0;padding-left:18px}
+.summary{display:grid;grid-template-columns:max-content 1fr;gap:6px 16px;font-size:15px}
+.summary dt{color:var(--muted)}
+.summary dd{margin:0}
+
+/* supply categories */
+.cats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+@media (max-width:900px){.cats{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:560px){.cats{grid-template-columns:1fr}}
+.cat{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);display:flex;flex-direction:column;min-width:0;overflow:hidden}
+.cat .ph{border-radius:0;aspect-ratio:16/9}
+.cat .body{padding:18px 20px 20px;display:flex;flex-direction:column;gap:10px;flex:1}
+.cat .tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:auto;padding-top:4px}
+.tagc{font-size:12px;font-weight:600;letter-spacing:.04em;padding:2px 9px;border-radius:999px;background:var(--acc-soft);color:var(--fg)}
+.tagc.st{background:transparent;border:1px dashed var(--line);color:var(--muted);font-weight:500}
+.cat .btn.ghost{align-self:flex-start;padding-left:0}
+.cats.compact .cat .ph{display:none}
+
+/* gallery */
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:22px}
+.filters button{font:inherit;font-size:14.5px;border:1px solid var(--line);background:var(--surface);color:var(--fg);border-radius:999px;padding:5px 14px;cursor:pointer}
+.filters button[aria-pressed="true"]{background:var(--pri);border-color:var(--pri);color:var(--on-pri)}
+
+/* footer */
+footer.site{background:var(--sunk);color:var(--fg);border-top:4px solid var(--pri);padding-block:44px 28px;font-size:15px}
+footer.site .cols{display:grid;grid-template-columns:1.4fr repeat(3,1fr);gap:28px}
+@media (max-width:760px){footer.site .cols{grid-template-columns:1fr 1fr}}
+footer.site .flogo img{width:150px;height:auto;background:#fff;border-radius:var(--r);padding:8px;display:block}
+footer.site h4{margin:0 0 10px;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;opacity:.7;font-weight:600}
+footer.site ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:6px}
+footer.site a{text-decoration:none;opacity:.88}
+footer.site a:hover{opacity:1;text-decoration:underline}
+footer.site .legal{margin-top:32px;padding-top:16px;border-top:1px solid color-mix(in srgb,currentColor 20%,transparent);font-size:13px;opacity:.7;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+<link rel="stylesheet" href="layouts.css">
+
+<div class="draft"><div class="in"><span><b>Draft for team review.</b> Forms don't send yet, sign-in isn't live, and photo slots show drawings until stock or project photos are added.</span><span style="display:flex;gap:10px;align-items:center;flex-wrap:wrap"><span class="spec" id="themeName"></span><span class="spec">v0.3 · Oct 2026</span></span></div></div>
+
+<header class="top">
+  <div class="in">
+    <a class="logo" href="#home" aria-label="Bravion home">
+      <span class="logo-mark" id="logoMark"></span>
+      <span class="logo-text"><b data-brand>Bravion</b><small>Envelope Systems Inc.</small></span>
+    </a>
+    <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="mainNav">Menu</button>
+    <nav class="main" id="mainNav" aria-label="Main">
+      <a href="#products">Doors &amp; Windows</a>
+      <a href="#pros">For Pros</a>
+      <a href="#commercial">Commercial</a>
+      <a href="#showroom">Showroom</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="btn pri" href="#quote">Request a quote</a>
+  </div>
+</header>
+
+<main>
+<!-- HOME -->
+<section data-page="home">
+  <div class="hero home-hero"><div class="hero-deco" aria-hidden="true"><i></i><i></i><i></i></div><div class="in">
+    <div class="copy">
+      <span class="eyebrow"><span data-div-res>Benicio Residential</span> · <span data-area>Dallas–Fort Worth</span></span>
+      <h1>Doors and windows for the homes <em class="s">North Texas</em> is building.</h1>
+      <p class="lead">Custom doors and windows, made to order for homeowners, remodelers and builders. Sized to your openings, sourced direct from the factory and tracked from quote to delivery.</p>
+      <div class="btns"><a class="btn pri" href="#quote">Request a quote</a><a class="btn sec" href="#pros">I'm a builder or remodeler</a></div>
+    </div>
+    <figure class="ph" data-slot="hero"></figure>
+  </div></div>
+
+  <div class="band tint"><div class="in">
+    <div class="head"><span class="eyebrow">Start here</span><h2>Two ways to work with us</h2></div>
+    <div class="g2">
+      <div class="path">
+        <h3>Builders, remodelers and designers</h3>
+        <ul><li>Takeoffs from your plans and door and window schedules</li><li>Trade pricing on approved accounts</li><li>Deliveries staged by phase or by unit</li><li>One project manager from order to punch list</li></ul>
+        <div class="btns"><a class="btn pri" href="#pros">Pro services</a><a class="btn ghost" href="#pros-login">Partner sign-in</a></div>
+      </div>
+      <div class="path">
+        <h3>Homeowners</h3>
+        <ul><li>Help choosing styles, finishes and glass</li><li>Quotes you can hand straight to your contractor</li><li>Doors and windows made to fit your existing openings</li><li>A showroom to see products in person (opening soon)</li></ul>
+        <div class="btns"><a class="btn pri" href="#quote">Get a quote</a><a class="btn ghost" href="#showroom">About the showroom</a></div>
+      </div>
+    </div>
+  </div></div>
+
+  <div class="band"><div class="in">
+    <div class="head"><span class="eyebrow">What we make</span><h2>Custom doors and windows</h2><p class="muted">Every product is made to order for your project. Catalogs for each line are in development.</p></div>
+    <div class="cats compact" id="homeCats"></div>
+    <div class="btns" style="margin-top:22px"><a class="btn sec" href="#products">See all doors and windows</a></div>
+  </div></div>
+
+  <div class="band feature"><div class="in">
+    <div class="head"><span class="eyebrow">How ordering works</span><h2>From plans to delivered openings</h2></div>
+    <ol class="steps">
+      <li><h3>Send plans</h3><p class="muted">Upload drawings, a door and window schedule, or photos of the openings.</p></li>
+      <li><h3>Get a quote</h3><p class="muted">We measure from your plans and return an itemized quote with lead times.</p></li>
+      <li><h3>Approve and order</h3><p class="muted">Confirm sizes, finishes, glass and handing. Each unit is built to order.</p></li>
+      <li><h3>Delivery</h3><p class="muted">Doors and windows arrive labeled by room, phase or unit.</p></li>
+    </ol>
+  </div></div>
+
+  <div class="band"><div class="in split">
+    <figure class="ph wide" data-slot="showroom"></figure>
+    <div class="stack">
+      <span class="eyebrow">Coming soon</span>
+      <h2>A door and window showroom</h2>
+      <p class="muted">Our Dallas–Fort Worth showroom will put our doors and windows on display at full size, so you can compare styles, finishes and glass before you order.</p>
+      <div class="btns"><a class="btn sec" href="#showroom">See the plan</a></div>
+    </div>
+  </div></div>
+
+  <div class="band tint"><div class="in split rev">
+    <figure class="ph wide" data-slot="commercial"></figure>
+    <div class="stack">
+      <span class="eyebrow">Commercial supply</span>
+      <h2>Doors and windows for larger builds</h2>
+      <p class="muted">Builders and developers working on multifamily or commercial projects: start a new request, ask about a project, or reach your account team.</p>
+      <div class="btns"><a class="btn sec" href="#commercial">Commercial supply</a></div>
+    </div>
+  </div></div>
+
+  <div class="band"><div class="in">
+    <div class="head"><span class="eyebrow">Service area</span><h2><span data-area>Dallas–Fort Worth</span></h2></div>
+  </div></div>
+</section>
+
+<!-- PRODUCTS -->
+<section data-page="products">
+  <div class="page-hero"><div class="in">
+    <span class="eyebrow">Doors &amp; Windows</span>
+    <h1>Custom doors and windows</h1>
+    <p class="lead">Every door and window is made to order for homeowners, remodelers and builders. Full catalogs are in development, so send your sizes or plans and we'll quote your project.</p>
+    <div class="filters" id="catFilter" role="group" aria-label="Filter products"><button type="button" aria-pressed="true" data-f="All">All products</button><button type="button" aria-pressed="false" data-f="Doors">Doors</button><button type="button" aria-pressed="false" data-f="Windows">Windows</button></div>
+  </div></div>
+  <div class="band" style="padding-top:8px"><div class="in">
+    <div class="cats" id="allCats"></div>
+    <p class="notice" style="margin-top:28px">Need an unusual size or style? Everything is built to order. <a href="#quote">Send a request</a> with your plans, schedule or measurements and we'll quote it.</p>
+  </div></div>
+</section>
+
+<!-- PROS -->
+<section data-page="pros">
+  <div class="hero"><div class="in">
+    <div class="copy">
+      <span class="eyebrow">For builders, remodelers and designers</span>
+      <h1>Your opening package, <em class="s">handled</em>.</h1>
+      <p class="lead">Send the plans once. We take off every door and window, build each one to order, and deliver it labeled for the crew.</p>
+      <div class="btns"><a class="btn pri" href="#quote" data-pre="Trade account">Request a trade account</a><a class="btn sec" href="#pros-login">Partner sign-in</a></div>
+    </div>
+    <figure class="ph" data-slot="pros"></figure>
+  </div></div>
+
+  <div class="band tint"><div class="in">
+    <div class="head"><span class="eyebrow">What a trade account gets you</span><h2>Built for job schedules</h2></div>
+    <div class="g3">
+      <div class="card"><h3>Takeoffs from plans</h3><p class="muted">We read your door and window schedules and return a line-by-line quote with lead times.</p></div>
+      <div class="card"><h3>Trade pricing</h3><p class="muted">Account pricing for approved builders, remodelers and design firms.</p></div>
+      <div class="card"><h3>Phased delivery</h3><p class="muted">Doors and windows labeled by phase, floor or unit so nothing sits on site too early.</p></div>
+      <div class="card"><h3>Order tracking</h3><p class="muted">See where each line stands, from ordered to delivered.</p></div>
+      <div class="card"><h3>Submittals</h3><p class="muted">Cut sheets, ratings and warranty documents gathered for your approvals.</p></div>
+      <div class="card"><h3>Client selections</h3><p class="muted">Send your homeowners to the showroom and we'll document what they choose.</p></div>
+    </div>
+  </div></div>
+
+  <div class="band" id="pros-architects"><div class="in split rev">
+    <figure class="ph wide" data-slot="lounge"></figure>
+    <div class="stack">
+      <span class="eyebrow">Architects and designers</span>
+      <h2>Specify with confidence</h2>
+      <p class="muted">Our architect specification program gives your team the documents and support to write openings into the drawings correctly the first time.</p>
+      <ul class="checks"><li>Product data, shop drawings and submittal packages</li><li>Continuing education sessions for AIA and ASID members (planned)</li><li>Private showroom events for your clients</li><li>Help matching performance specs to code and budget</li></ul>
+      <div class="btns"><a class="btn sec" href="#contact" data-team="sales">Join the specification program</a></div>
+    </div>
+  </div></div>
+
+  <div class="band" id="pros-login"><div class="in split">
+    <div class="stack">
+      <span class="eyebrow">Partner &amp; contractor portal</span>
+      <h2>Sign in to your account</h2>
+      <p class="muted">Approved partners and contractors will sign in here to see quotes, orders, deliveries and documents.</p>
+      <p class="notice">The portal isn't live yet. Sign-in turns on once accounts are set up in the team's project software.</p>
+    </div>
+    <div class="panel">
+      <form id="loginForm" aria-describedby="loginNote">
+        <div class="field"><label for="loginEmail">Email</label><input type="email" id="loginEmail" autocomplete="off" disabled placeholder="Available at launch"></div>
+        <div class="field"><label for="loginPass">Password</label><input type="password" id="loginPass" autocomplete="off" disabled placeholder="Available at launch"></div>
+        <button class="btn pri" type="submit" disabled>Sign in</button>
+        <p class="hint muted" id="loginNote">No account yet? <a href="#quote" data-pre="Trade account">Request a trade account</a>.</p>
+      </form>
+    </div>
+  </div></div>
+
+  <div class="band feature"><div class="in">
+    <div class="head"><span class="eyebrow">Talk to the right team</span><h2>Contact sales or project management</h2></div>
+    <div class="g2">
+      <div class="card"><h3>Sales team</h3><p class="muted">New accounts, pricing, product selection and quotes.</p><div class="btns"><a class="btn sec" style="border-color:currentColor;color:inherit" href="#contact" data-team="sales">Contact sales</a></div></div>
+      <div class="card"><h3>Project management</h3><p class="muted">Active orders, delivery schedules, site issues and warranty.</p><div class="btns"><a class="btn sec" style="border-color:currentColor;color:inherit" href="#contact" data-team="pm">Contact project management</a></div></div>
+    </div>
+  </div></div>
+</section>
+
+<!-- COMMERCIAL -->
+<section data-page="commercial">
+  <div class="hero"><div class="in">
+    <div class="copy">
+      <span class="eyebrow"><span data-div-com>Bravion Commercial Supply</span></span>
+      <h1>Supply for new development and remodels</h1>
+      <p class="lead">Custom doors and windows for multifamily, mixed-use and conversion projects in <span data-markets>Dallas–Fort Worth and Houston</span>, built to order and sourced direct from the factory.</p>
+    </div>
+    <figure class="ph" data-slot="commercial"></figure>
+  </div></div>
+  <div class="band tint"><div class="in">
+    <div class="head"><span class="eyebrow">How can we help?</span><h2>Choose where to start</h2></div>
+    <div class="g3">
+      <div class="card"><h3>New request</h3><p class="muted">Send drawings, door and window schedules or a scope, and we'll return a takeoff and budgetary quote.</p><div class="btns" style="margin-top:auto"><a class="btn pri" href="#quote" data-ptype="Multifamily or commercial">Start a request</a></div></div>
+      <div class="card"><h3>Project questions</h3><p class="muted">Submittals, product data, lead times or a question about a package we've quoted.</p><div class="btns" style="margin-top:auto"><a class="btn sec" href="#contact" data-team="pm">Ask the project team</a></div></div>
+      <div class="card"><h3>Current customers</h3><p class="muted">Your salesperson is your direct line for orders, changes and deliveries. If you can't reach them, we'll connect you.</p><div class="btns" style="margin-top:auto"><a class="btn sec" href="#contact" data-team="sales">Reach your account team</a></div></div>
+    </div>
+  </div></div>
+  <div class="band feature"><div class="in">
+    <div class="head"><span class="eyebrow">Technical support</span><h2>Documentation that gets through review</h2><p class="muted">Every package comes with the paperwork architects, engineers and inspectors ask for.</p></div>
+    <div class="g4">
+      <div class="card"><h3>Wind load design</h3><p class="muted">Glazing sized to the governing wind pressures for the building.</p><p class="spec">ASCE 7-22</p></div>
+      <div class="card"><h3>Structural testing</h3><p class="muted">Test data for frames and glass under uniform static load.</p><p class="spec">ASTM E330</p></div>
+      <div class="card"><h3>Field water testing</h3><p class="muted">Installed openings checked for water penetration on site.</p><p class="spec">AAMA 501.2</p></div>
+      <div class="card"><h3>Submittals and takeoffs</h3><p class="muted">Door schedule takeoffs, product data, material test reports and cost analysis.</p><p class="spec">By door type and unit</p></div>
+    </div>
+  </div></div>
+  <div class="band"><div class="in">
+    <div class="head"><span class="eyebrow">Process</span><h2>How a commercial package runs</h2></div>
+    <ol class="steps">
+      <li><h3>Drawings and schedules</h3><p class="muted">Send the door and window schedules and elevations.</p></li>
+      <li><h3>Takeoff and budget</h3><p class="muted">We count by type and unit and return a budgetary quote.</p></li>
+      <li><h3>Submittals</h3><p class="muted">Product data and shop drawings for architect review.</p></li>
+      <li><h3>Phased delivery</h3><p class="muted">Kitted floor by floor or unit by unit to match your schedule.</p></li>
+    </ol>
+  </div></div>
+</section>
+
+<!-- SHOWROOM -->
+<section data-page="showroom">
+  <div class="hero"><div class="in">
+    <div class="copy">
+      <span class="eyebrow">Opening soon in <span data-area>Dallas–Fort Worth</span></span>
+      <h1>See it, touch it, choose it.</h1>
+      <p class="lead">Our showroom will put Bravion doors and windows on display at full size, so homeowners, remodelers and builders can compare styles, finishes and glass before they order.</p>
+      <div class="btns"><a class="btn pri" href="#quote">Request a quote</a><a class="btn sec" href="#contact" data-team="sales">Get opening updates</a></div>
+    </div>
+    <figure class="ph" data-slot="showroom"></figure>
+  </div></div>
+  <div class="band tint"><div class="in">
+    <div class="head"><span class="eyebrow">Planned displays</span><h2>What you'll find inside</h2></div>
+    <div class="g3">
+      <div class="vig"><figure class="ph" data-slot="entryDoors"></figure><h3>Entry door gallery</h3><p class="muted">Front doors at full size in wood, fiberglass and steel, with sidelites and transoms.</p></div>
+      <div class="vig"><figure class="ph" data-slot="interiorDoors"></figure><h3>Interior door wall</h3><p class="muted">Panel styles, cores and finishes you can open and close.</p></div>
+      <div class="vig"><figure class="ph" data-slot="patio"></figure><h3>Patio door display</h3><p class="muted">Working sliding, French and multi-slide systems.</p></div>
+      <div class="vig"><figure class="ph" data-slot="windows"></figure><h3>Window wall</h3><p class="muted">Frame materials, grid patterns and glass options side by side.</p></div>
+      <div class="vig"><figure class="ph" data-slot="hardware"></figure><h3>Finish and hardware samples</h3><p class="muted">Door colors, stains and handle finishes to match your selections.</p></div>
+      <div class="vig"><figure class="ph" data-slot="lounge"></figure><h3>Design consultation lounge</h3><p class="muted">A table for plans, samples and selections with our team.</p></div>
+    </div>
+  </div></div>
+</section>
+
+<!-- PROJECTS -->
+<section data-page="projects">
+  <div class="page-hero"><div class="in">
+    <span class="eyebrow">Projects</span>
+    <h1>Work from our builders and clients</h1>
+    <p class="lead">Photos appear here once a customer approves them. The team adds them in one place, and this page updates itself.</p>
+  </div></div>
+  <div class="band" style="padding-top:28px"><div class="in">
+    <div class="filters" id="filters" role="group" aria-label="Filter projects"></div>
+    <div class="g3" id="gallery"></div>
+  </div></div>
+</section>
+
+<!-- CONTACT -->
+<section data-page="contact">
+  <div class="page-hero"><div class="in">
+    <span class="eyebrow">Contact</span>
+    <h1>Talk to the Bravion team</h1>
+    <p class="lead">We serve builders, remodelers and homeowners across <span data-area>Dallas–Fort Worth</span>. Choose who you need and we'll route your message.</p>
+  </div></div>
+  <div class="band" style="padding-top:28px"><div class="in split" style="align-items:start">
+    <div class="panel">
+      <form id="contactForm" novalidate>
+        <div class="field"><span class="legend" id="teamLbl">Who do you need?</span>
+          <div class="opts" role="radiogroup" aria-labelledby="teamLbl">
+            <label class="opt"><input type="radio" name="team" value="sales" checked><span><b>Sales</b><br><span class="muted">Quotes, pricing, new accounts</span></span></label>
+            <label class="opt"><input type="radio" name="team" value="pm"><span><b>Project management</b><br><span class="muted">Orders, deliveries, warranty</span></span></label>
+                        <label class="opt"><input type="radio" name="team" value="general"><span><b>Something else</b><br><span class="muted">General questions</span></span></label>
+          </div></div>
+        <div class="row2">
+          <div class="field"><label for="cName">Name</label><input type="text" id="cName" required></div>
+          <div class="field"><label for="cCompany">Company <span class="muted">(optional)</span></label><input type="text" id="cCompany"></div>
+        </div>
+        <div class="row2">
+          <div class="field"><label for="cEmail">Email</label><input type="email" id="cEmail" required></div>
+          <div class="field"><label for="cPhone">Phone <span class="muted">(optional)</span></label><input type="tel" id="cPhone"></div>
+        </div>
+        <div class="field"><label for="cMsg">Message</label><textarea id="cMsg" required></textarea></div>
+        <p class="err" id="contactErr" hidden></p>
+        <button class="btn pri" type="submit">Send message</button>
+        <div id="contactDone" hidden></div>
+      </form>
+    </div>
+    <div class="stack">
+      <div class="card"><h3>Where we work</h3><p class="muted"><span data-area>Dallas–Fort Worth</span>. Showroom address to be announced.</p></div>
+      <div class="card"><h3>Already use Houzz Pro or Buildertrend?</h3><p class="muted">Send your project straight from the platform your team already uses.</p><div class="btns" id="platformLinks"></div></div>
+      <div class="card"><h3>Email</h3><p class="muted" id="inboxLine"></p></div>
+    </div>
+  </div></div>
+</section>
+
+<!-- QUOTE -->
+<section data-page="quote">
+  <div class="page-hero"><div class="in">
+    <span class="eyebrow">Request a quote</span>
+    <h1>Tell us about the project</h1>
+    <p class="lead">Five short steps. Plans and photos help us quote faster, but you can send them later.</p>
+  </div></div>
+  <div class="band" style="padding-top:28px"><div class="in" style="max-width:860px">
+    <div class="panel">
+      <ol class="progress" id="qProg"><li>About you</li><li>Project</li><li>Products</li><li>Files</li><li>Contact</li></ol>
+      <form id="quoteForm" novalidate>
+        <div class="qstep" data-q="0">
+          <div class="field"><span class="legend" id="roleLbl">I am a…</span>
+            <div class="opts" role="radiogroup" aria-labelledby="roleLbl">
+              <label class="opt"><input type="radio" name="role" value="Builder"> Builder</label>
+              <label class="opt"><input type="radio" name="role" value="Remodeler"> Remodeler</label>
+              <label class="opt"><input type="radio" name="role" value="Architect or designer"> Architect or designer</label>
+              <label class="opt"><input type="radio" name="role" value="Developer"> Developer or GC</label>
+              <label class="opt"><input type="radio" name="role" value="Homeowner"> Homeowner</label>
+            </div></div>
+        </div>
+        <div class="qstep" data-q="1">
+          <div class="field"><span class="legend" id="typeLbl">Project type</span>
+            <div class="opts" role="radiogroup" aria-labelledby="typeLbl">
+              <label class="opt"><input type="radio" name="ptype" value="New construction"> New construction</label>
+              <label class="opt"><input type="radio" name="ptype" value="Remodel or replacement"> Remodel or replacement</label>
+              <label class="opt"><input type="radio" name="ptype" value="Multifamily or commercial"> Multifamily or commercial</label>
+            </div></div>
+          <div class="row2">
+            <div class="field"><label for="qCity">City or ZIP</label><input type="text" id="qCity" placeholder="e.g. Frisco or 75034"></div>
+            <div class="field"><label for="qWhen">When do you need them?</label>
+              <select id="qWhen"><option value="">Choose one</option><option>Within 30 days</option><option>1–3 months</option><option>3–6 months</option><option>6+ months</option><option>Just budgeting</option></select></div>
+          </div>
+        </div>
+        <div class="qstep" data-q="2">
+          <div class="field"><span class="legend" id="prodLbl">What should we quote?</span>
+            <div class="opts" role="group" aria-labelledby="prodLbl" id="qProds"></div></div>
+          <div class="field"><label for="qQty">Quantities or details</label><textarea id="qQty" placeholder="e.g. 14 windows, 3 exterior doors, 22 interior doors; black exterior frames"></textarea></div>
+        </div>
+        <div class="qstep" data-q="3">
+          <div class="field"><label for="qFiles">Plans, schedules or photos</label><span class="hint">PDF, JPG, PNG or spreadsheets. Optional.</span><input type="file" id="qFiles" multiple accept=".pdf,.jpg,.jpeg,.png,.heic,.xlsx,.csv,.dwg"></div>
+          <ul class="files" id="qFileList"></ul>
+        </div>
+        <div class="qstep" data-q="4">
+          <div class="row2">
+            <div class="field"><label for="qName">Name</label><input type="text" id="qName" required></div>
+            <div class="field"><label for="qCompany">Company <span class="muted">(optional)</span></label><input type="text" id="qCompany"></div>
+          </div>
+          <div class="row2">
+            <div class="field"><label for="qEmail">Email</label><input type="email" id="qEmail" required></div>
+            <div class="field"><label for="qPhone">Phone <span class="muted">(optional)</span></label><input type="tel" id="qPhone"></div>
+          </div>
+        </div>
+        <p class="err" id="qErr" hidden></p>
+        <div class="navrow"><button class="btn sec" type="button" id="qBack">Back</button><button class="btn pri" type="button" id="qNext">Next</button></div>
+      </form>
+      <div id="qDone" hidden></div>
+    </div>
+  </div></div>
+</section>
+</main>
+
+<footer class="site"><div class="in">
+  <div class="cols">
+    <div><span class="flogo" id="footerLogo"></span><p style="opacity:.75;margin-top:8px;max-width:34ch">Custom doors and windows for homeowners, remodelers and builders in <span data-area>Dallas–Fort Worth</span>.</p></div>
+    <div><h4>Doors &amp; Windows</h4><ul id="footCats"></ul></div>
+    <div><h4>Work with us</h4><ul><li><a href="#pros">For pros</a></li><li><a href="#commercial">Commercial</a></li><li><a href="#pros-login">Partner sign-in</a></li></ul></div>
+    <div><h4>Company</h4><ul><li><a href="#projects">Projects</a></li><li><a href="#showroom">Showroom</a></li><li><a href="#contact">Contact</a></li><li><a href="#quote">Request a quote</a></li></ul></div>
+  </div>
+  <div class="legal"><span>© 2026 <span data-legal>Bravion Envelope Systems Inc.</span> Residential division: <span data-div-res>Benicio Residential</span>.</span><span>Draft site for internal review</span></div>
+</div></footer>
+
+<script src="config.js"></script>
+<script src="themes.js"></script>
+<script src="app.js"></script>
+
+</html>
