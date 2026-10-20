@@ -11,7 +11,7 @@ window.BRAVION_CONFIG = {
     legalName: "Bravion Envelope Systems Inc.",
     tagline: "Building performance. Delivering excellence.",
     // Divisions. The residential team is expected to operate as Benicio under Bravion; change the names here if that changes.
-    divisions: { residential: "Benicio Residential", commercial: "Bravion Commercial Supply" },
+    divisions: { residential: "Benicio Glass & Doors", commercial: "Bravion Commercial Supply" },
 
     // Logo override. Leave "src" empty to use the theme's logo. Set it (for example "logo/new-logo.svg") to force one file everywhere.
     logo: { src: "", alt: "Bravion Envelope Systems logo" },
